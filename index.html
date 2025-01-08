@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M17</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6;}
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select {font-size: 1em; padding: 5px;}
+        .activity { margin-bottom: 20px; }
+         .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+         span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const activity3Step6 = document.getElementById('activity-3-step-6');
+
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+                if (activity3Step6) activity3Step6.style.display = 'block';
+
+
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                if (activity3Step6) activity3Step6.style.display = 'none';
+
+            } else {
+                activity2.style.display = 'block';
+                if (activity3Step6) activity3Step6.style.display = 'block';
+
+            }
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M17</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+         <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+         <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr>
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            <strong>Paso 1:</strong> Proyectar Diapositiva 1 y verificar que estén disponibles los siguientes materiales y recursos:
+                            <ul>
+                                <li>Cutebots con sensores ultrasónicos y baterías cargadas.</li>
+                                <li>Computadoras o tabletas con software de programación instalado.</li>
+                                <li>Cinta adhesiva para delimitar espacios.</li>
+                                <li>Obstáculos pequeños.</li>
+                                 <li>Magic Boards.</li>
+                            </ul>
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">No aplica</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 2 con el tema del día: "Bienvenida a Genius Motors: Pruebas de Circuitos Autónomos".</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Hola, ingenieros de Genius Motors! 🌟 Hoy, como parte del equipo de pruebas, vamos a poner a prueba nuestros Cutebots y sus sensores ultrasónicos. Su misión es programar la navegación autónoma de vehículos en diferentes circuitos. ¡Prepárense para un día lleno de desafíos, descubrimientos y mucha innovación! 🚀"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 3 "¿Cómo están hoy, ingenieros?" con poses relacionadas con el trabajo en Genius Motors.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""¡Ingenieros! Díganme cómo están hoy, preparados para las pruebas: - Si están súper emocionados y listos para diseñar circuitos, activen el Modo Pruebas colocando sus manos al frente como si estuvieran analizando datos y diciendo '¡Análisis en curso!' 📊. - Si necesitan un poco de energía para completar el desafío, entren en Modo Recarga cruzando los brazos frente a ustedes como si estuvieran recargando su energía. 🔋 ¡Vamos a medir nuestro nivel de energía antes de comenzar la misión de pruebas!"""</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento Genius Motors" y guiar a los estudiantes en el ritual temático.</td>
+                         <td style="padding: 10px; vertical-align: top;">"""Juntamos nuestras manos y decimos como ingenieros: '¡Gracias por estar aquí, colegas de Genius Motors! Hoy trabajaremos juntos para diseñar circuitos y programar la navegación autónoma con sensores ultrasónicos. ¡Será un día lleno de trabajo en equipo y soluciones creativas!' 🌟💡"""</td>
+                     </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Misión en Genius Motors".</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Atención, ingenieros de pruebas! Aquí están los objetivos de nuestra misión de hoy en Genius Motors: <br> <strong>1.</strong> Programar el sensor ultrasónico del Cutebot para detectar obstáculos en los circuitos. <br> <strong>2.</strong> Diseñar programas de navegación autónoma que permitan al Cutebot reaccionar de forma inteligente a su entorno. <br> <strong>3.</strong> Colaborar con sus colegas ingenieros para probar, mejorar y optimizar cada programa. ¡El futuro de la navegación autónoma está en sus manos!"""</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="3">
+            <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 3 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Ejercicio de coordinación para activar la lógica y la planificación.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar Diapositiva 6: Explicar que realizarán un ejercicio de coordinación para activar la lógica y la planificación.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de Genius Motors, vamos a activar nuestros cerebros para diseñar circuitos de navegación autónoma! Hoy realizaremos un ejercicio que conectará la coordinación con la planificación, lo que será muy útil para la programación de nuestros Cutebots. ¿Están listos para activar sus mentes?”</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 7: Mostrar instrucciones para realizar el ejercicio "Toques Cruzados".</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Ahora vamos a poner a trabajar nuestro cerebro de ingenieros! Sigan estas instrucciones: 1. Levanten su mano derecha y toquen su rodilla izquierda. 2. Luego, levanten su mano izquierda y toquen su rodilla derecha. 3. Repitan este movimiento 5 veces lentamente, prestando atención a la coordinación. Luego háganlo 5 veces más rápido. Este ejercicio nos ayudará a conectar ambos hemisferios del cerebro, ¡lo cual es clave para la programación de nuestros Cutebots!"""</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 8 y guiar una breve discusión sobre cómo este ejercicio se relaciona con las habilidades necesarias en el diseño de circuitos.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Excelente trabajo, Ingenieros! Ahora, piensen: ¿Cómo creen que este ejercicio de coordinación nos ayudará a programar los Cutebots? ¿Qué habilidades activamos al hacer ""Toques Cruzados""? Recuerden, la conexión entre la mente y el cuerpo es clave para diseñar programas que nos lleven al éxito."</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="27">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 27 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Resolución de retos prácticos para programar la navegación autónoma con sensores ultrasónicos.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar Diapositiva 9 "Programación en Genius Motors". Explicar el objetivo general del reto y los niveles de dificultad.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de Genius Motors, llegó la hora de demostrar sus habilidades! 🚀 Hoy vamos a programar a nuestros Cutebots para navegar en circuitos autónomos. Tenemos tres niveles de desafío: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, diseñados para poner a prueba su lógica y creatividad. ¡Elijan su reto y prepárense para la acción!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 10 "Preparativos del Reto en Genius Motors" y guiar a los estudiantes para verificar y organizar los materiales antes de comenzar.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Antes de iniciar la programación, ingenieros, asegúrense de tener todo listo en su espacio de pruebas! Revisen que cuenten con: - Los Cutebots con sensores ultrasónicos y baterías cargadas. - La computadora o tableta con el software de programación. - Cinta adhesiva para delimitar su circuito de pruebas. - Magic tablets - Los obstáculos pequeños para la prueba. ¡La preparación es el primer paso para el éxito en Genius Motors!"""</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 11 "Delimitación del Circuito". Pedir a los equipos que usen cinta adhesiva para delimitar el área donde probarán su programa, simulando el espacio de pruebas de Genius Motors.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Ingenieros, es momento de construir sus circuitos de pruebas! Usen cinta adhesiva para marcar un área rectangular de 1x2 metros. Este será el campo donde sus Cutebots mostrarán sus habilidades. Recuerden: las trayectorias deben mantenerse dentro de este espacio, evitando colisiones. ¡Es hora de demostrar su precisión!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar Diapositiva 12 "Niveles de Prueba en Genius Motors" y detallar los objetivos y <span style="color: red; font-weight: bold;">condiciones</span> de cada nivel.</td>
+    <td style="padding: 10px; vertical-align: top;">"""¡Escuchen atentamente, ingenieros de pruebas! Aquí están los desafíos que Genius Motors ha preparado para ustedes: <br><br> <strong>Nivel Rookie: 'Explorador del Camino Z Básico'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Cutebot para moverse en un circuito recto con un giro simple y detenerse con un obstáculo. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un circuito en forma de ‘Z’. Coloca un obstáculo en el tramo recto. Programa al Cutebot para avanzar, detenerse al detectar el obstáculo y completar el giro.  <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El Cutebot debe detenerse antes de llegar al obstáculo y completar el giro. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Asegúrate de que el circuito sea amplio y prueba el sensor para ajustar su precisión. <br><br> <strong>Nivel Master: 'Circuito en U: Maniobras de Evasión'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Cutebot para completar un circuito en forma de ‘U’, esquivando obstáculos en cada tramo.  <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un circuito en forma de ‘U’. Coloca un obstáculo en cada tramo. Programa al Cutebot para avanzar, detenerse, girar para esquivar y continuar su recorrido. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El Cutebot debe evitar todos los obstáculos sin tocarlos y retomar su ruta. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Ajusta los tiempos de giro para que esquive cada obstáculo de forma eficiente.  <br><br> <strong>Nivel Hacker: 'Circuito en S: Navegación Autónoma Completa'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Cutebot para completar un circuito en forma de ‘S’, ajustando la velocidad, frenando y esquivando obstáculos. <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un circuito en forma de ‘S’ con dos tramos rectos, y dos curvas. Coloca dos obstáculos en los tramos rectos y uno en la curva. Programa al Cutebot para ajustar la velocidad, detenerse al detectar obstáculos y girar para esquivarlos. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El Cutebot debe ajustar su velocidad y evitar los obstáculos, completando el circuito. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Asegúrate de que el circuito sea amplio para que el Cutebot pueda girar al esquivar."""</td>
+</tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (20 minutos):</strong> Proyectar Diapositiva 13 "Manos a la Obra: Puesta en Marcha". Explicar que cada equipo puede adaptar su circuito y programar sus Cutebots en el laboratorio de Genius Motors.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros, ahora es momento de la acción! ⏱️ Cada equipo puede organizar los obstáculos en su circuito como prefieran, siempre respetando las condiciones de su nivel. ¡Apliquen todo lo que han aprendido hoy para programar las trayectorias de sus Cutebots y superen este desafío como verdaderos ingenieros de Genius Motors!"</td>
+                    </tr>
+                      <tr style="border-bottom: 1px solid #ddd;" id="activity-3-step-6">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (5 minutos):</strong> Proyectar Diapositiva 14 "Pruebas y Ajustes en el Laboratorio". Supervisar mientras los equipos prueban y ajustan sus programas y circuitos según el comportamiento observado.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de pruebas, el momento de la verdad ha llegado! Coloquen sus Cutebots en el circuito, observen su comportamiento, y ajusten sus programas según sea necesario. Recuerden: en Genius Motors, cada prueba nos acerca a la perfección. Si algo no sale como esperaban, ¡ajusten y perfeccionen! La perseverancia es la clave del éxito."</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (3 minutos):</strong> Proyectar Diapositiva 15 "Presentación de Resultados en Genius Motors". Invitar a los equipos a mostrar su trabajo y reflexionar sobre sus estrategias y resultados.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Es hora de la presentación de resultados en Genius Motors, colegas ingenieros! Cada equipo tendrá la oportunidad de mostrar sus circuitos, cómo programaron sus Cutebots, y qué desafíos encontraron durante el proceso. Escuchemos con atención y aprendamos de las estrategias de cada equipo. ¡En Genius Motors, el conocimiento compartido nos hace más fuertes!"</td>
+                    </tr>
+                    <tr>
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 8 (0.5 minutos):</strong> Proyectar Diapositiva 16 "Revisión de Objetivos de la Misión". Reflexionar con los estudiantes sobre lo aprendido y cómo lograron cumplir los objetivos planteados.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""Hoy, como ingenieros de Genius Motors, lograron cosas increíbles: - Programaron el sensor ultrasónico de sus Cutebots para detectar obstáculos. - Diseñaron circuitos inteligentes para la navegación autónoma. - Colaboraron en equipo para superar los desafíos de cada prueba. ¡Me siento muy orgulloso de su dedicación y su ingenio! ¡Ustedes son el futuro de la innovación!"""</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="7">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Análisis colaborativo y propuesta de mejoras con el Team CANVAS.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar la Diapositiva 17 "Introducción al Team Gnius en Genius Motors". Explicar cómo los roles y las ideas colaborativas permitirán revisar y mejorar el trabajo realizado.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Ingenieros de Genius Motors! ⚙️ Ahora trabajaremos como un verdadero equipo de ingenieros. Usaremos el Team CANVAS para analizar cómo colaboramos y cómo podemos mejorar nuestros diseños y la programación. Cada equipo tendrá roles específicos: el Líder organizará la conversación, el Programador ajustará los códigos, y el Observador identificará áreas de mejora. ¡Recuerden, en Genius Motors el trabajo en equipo es fundamental!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar la Diapositiva 18 "Formación de Equipos de Ingenieros". Los estudiantes tendrán 1 minuto para formar equipos de 3 y asignar roles: Líder, Programador y Observador.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Tienen 1 minuto, ingenieros, para formar equipos de 3! Recuerden: - El Líder dirigirá la conversación y se asegurará de que todos participen. - El Programador ajustará el código según las ideas del equipo. - El Observador analizará qué funcionó y qué puede mejorar. ¡La colaboración es la clave en Genius Motors!"""</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar la Diapositiva 19 "Team CANVAS en Genius Motors". Cada equipo debe: 1. Analizar el trabajo realizado. 2. Proponer mejoras según los roles asignados. 3. Diseñar un plan conjunto para optimizar los resultados.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""Usen el Team CANVAS para reflexionar sobre su trabajo en Genius Motors. Pregúntense: - ¿Qué funcionó bien en nuestra programación? - ¿Qué podemos mejorar para hacer que el Cutebot sea más eficiente? - ¿Qué podemos cambiar en nuestro diseño para lograr mejores resultados? ¡Trabajen en equipo para optimizar nuestras soluciones de navegación autónoma!"""</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (3 minutos):</strong> Proyectar la Diapositiva 20 "Ajustes en el Laboratorio de Pruebas". Los equipos trabajan en las siguientes tareas: Líder organiza la discusión, Programador ajusta los códigos y Observador verifica el desempeño en el circuito.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Ingenieros, es momento de hacer los ajustes necesarios en el laboratorio de pruebas! Programadores, actualicen sus códigos basándose en la información del Team Canvas. Líderes, mantengan la comunicación y el enfoque. Observadores, asegúrense de que el circuito y los Cutebots estén funcionando según lo planeado. ¡Perfeccionemos cada detalle para superar cualquier desafío!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="3.5">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor de Lab ⏰ Tiempo: 3.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Reflexión final y organización del espacio de trabajo para cerrar con respeto y orden.
+                </div>
+            </div>
+            <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar la Diapositiva 21 "Revisión de Objetivos en Genius Motors". Leer los objetivos planteados al inicio y reflexionar sobre lo aprendido y logrado en equipo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Ingenieros de Genius Motors, hemos llegado al final de esta increíble prueba! 🌟 Revisemos nuestros objetivos: - ¿Programamos los sensores ultrasónicos para detectar obstáculos? - ¿Diseñamos trayectorias inteligentes para nuestros Cutebots? - ¿Colaboramos en equipo para optimizar nuestras soluciones? ¡Me siento muy orgulloso del trabajo que han realizado y del ingenio que han demostrado!"""</td>
+                    </tr>
+                    <tr>
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (3 minutos):</strong> Proyectar la Diapositiva 22 "Organización del Laboratorio". Guiar a los estudiantes para recoger y organizar todos los materiales utilizados, como ingenieros profesionales.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""Ingenieros, antes de irnos, honremos nuestro laboratorio de pruebas. Cada equipo debe recoger y organizar todos los materiales utilizados durante esta misión: - Guarden sus Cutebots y Micro:bits con cuidado. - Asegúrense de que la cinta adhesiva y los obstáculos estén en su lugar. - Limpien sus áreas de trabajo, dejándolo todo listo para la siguiente prueba. ¡Recuerden que el orden y la responsabilidad son clave en Genius Motors!"""</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
